@@ -1,0 +1,98 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bejani \& Ghatee(2021)Bejani and Ghatee]{Bejani2021}
+Bejani, Mohammad~Mahdi and Ghatee, Mehdi.
+\newblock A systematic review on overfitting control in shallow and deep neural
+  networks.
+\newblock \emph{Artificial Intelligence Review}, 54:\penalty0 6391--6438, 12
+  2021.
+\newblock ISSN 15737462.
+\newblock \doi{10.1007/s10462-021-09975-1}.
+
+\bibitem[Goodfellow et~al.(2016)Goodfellow, Bengio, and
+  Courville]{Goodfellow-et-al-2016}
+Goodfellow, Ian, Bengio, Yoshua, and Courville, Aaron.
+\newblock \emph{Deep Learning}.
+\newblock MIT Press, 2016.
+\newblock \url{http://www.deeplearningbook.org}.
+
+\bibitem[Guo et~al.(2017)Guo, Pleiss, Sun, and Weinberger]{Guo2017}
+Guo, Chuan, Pleiss, Geoff, Sun, Yu, and Weinberger, Kilian~Q.
+\newblock On calibration of modern neural networks.
+\newblock \emph{34th International Conference on Machine Learning, ICML 2017},
+  3:\penalty0 2130--2143, 6 2017.
+\newblock URL \url{https://arxiv.org/abs/1706.04599v2}.
+
+\bibitem[He et~al.(2015)He, Zhang, Ren, and Sun]{He2015}
+He, Kaiming, Zhang, Xiangyu, Ren, Shaoqing, and Sun, Jian.
+\newblock Deep residual learning for image recognition.
+\newblock \emph{Proceedings of the IEEE Computer Society Conference on Computer
+  Vision and Pattern Recognition}, 2016-December:\penalty0 770--778, 12 2015.
+\newblock ISSN 10636919.
+\newblock \doi{10.1109/CVPR.2016.90}.
+\newblock URL \url{https://arxiv.org/abs/1512.03385v1}.
+
+\bibitem[Lee et~al.(2019)Lee, Xiao, Schoenholz, Bahri, Novak, Sohl-Dickstein,
+  and Pennington]{Lee2019}
+Lee, Jaehoon, Xiao, Lechao, Schoenholz, Samuel~S., Bahri, Yasaman, Novak,
+  Roman, Sohl-Dickstein, Jascha, and Pennington, Jeffrey.
+\newblock Wide neural networks of any depth evolve as linear models under
+  gradient descent.
+\newblock \emph{Journal of Statistical Mechanics: Theory and Experiment}, 2020,
+  2 2019.
+\newblock \doi{10.1088/1742-5468/abc62b}.
+\newblock URL \url{http://arxiv.org/abs/1902.06720
+  http://dx.doi.org/10.1088/1742-5468/abc62b}.
+
+\bibitem[Matejka et~al.(2014)Matejka, Zhang, Ng, Mallidi, Glembek, Ma, and
+  Zhang]{Matejka2014}
+Matejka, Pavel, Zhang, Le, Ng, Tim, Mallidi, Sri~Harish, Glembek, Ondrej, Ma,
+  Jeff, and Zhang, Bing.
+\newblock Neural network bottleneck features for language identification.
+\newblock In \emph{Odyssey 2014: Speaker and Language Recognition Workshop},
+  pp.\  299--304. International Speech Communication Association, 2014.
+\newblock \doi{10.21437/odyssey.2014-45}.
+
+\bibitem[Ng(2004)]{ng2004feature}
+Ng, Andrew~Y.
+\newblock Feature selection, l1 vs. l2 regularization, and rotational
+  invariance.
+\newblock In \emph{Proceedings of the twenty-first international conference on
+  Machine learning}, pp.\ ~78, 2004.
+
+\bibitem[Power et~al.(2022)Power, Burda, Edwards, Babuschkin, and
+  Misra]{Power2022}
+Power, Alethea, Burda, Yuri, Edwards, Harri, Babuschkin, Igor, and Misra,
+  Vedant.
+\newblock Grokking: Generalization beyond overfitting on small algorithmic
+  datasets.
+\newblock 1 2022.
+\newblock URL \url{http://arxiv.org/abs/2201.02177}.
+\newblock This paper reproduces the process of Grokking and that this process
+  can happen well past the point of overfitting. It also studies generalization
+  as a function of dataset size and finds that increasing amounts of
+  optimization is required for generalization on smaller datasets.It is
+  relevent for my IRR as it describes, recreates and investigates the
+  conditions under which Grokking occurs.
+
+\bibitem[Srivastava et~al.(2014)Srivastava, Hinton, Krizhevsky, Sutskever, and
+  Salakhutdinov]{srivastava2014dropout}
+Srivastava, Nitish, Hinton, Geoffrey, Krizhevsky, Alex, Sutskever, Ilya, and
+  Salakhutdinov, Ruslan.
+\newblock Dropout: a simple way to prevent neural networks from overfitting.
+\newblock \emph{The journal of machine learning research}, 15\penalty0
+  (1):\penalty0 1929--1958, 2014.
+
+\bibitem[Zhang et~al.(2016)Zhang, Bengio, Hardt, Recht, and Vinyals]{Zhang2016}
+Zhang, Chiyuan, Bengio, Samy, Hardt, Moritz, Recht, Benjamin, and Vinyals,
+  Oriol.
+\newblock Understanding deep learning requires rethinking generalization.
+\newblock 11 2016.
+\newblock URL \url{http://arxiv.org/abs/1611.03530}.
+
+\end{thebibliography}
