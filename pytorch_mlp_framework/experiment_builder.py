@@ -153,6 +153,9 @@ class ExperimentBuilder(nn.Module):
         
         ########################################
         for name, param in named_parameters:
+		name = str(name).replace('layer_dict.','')
+		name = str(name).replace('.bias','')
+		name = str(name).replace('.weight','')
         	layers.append(name)
         	grad = param.grad
         	L1_grad = torch.abs(grad)
