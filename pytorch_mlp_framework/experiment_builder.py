@@ -152,7 +152,12 @@ class ExperimentBuilder(nn.Module):
         #TODO write your code here
         
         ########################################
-            
+        for name, param in named_parameters:
+        	layers.append(name)
+        	grad = param.grad
+        	L1_grad = torch.abs(grad)
+        	L1_mean = torch.mean(L1_grad).item()
+        	all_grads.append(L1_mean)
         
         plt = self.plot_func_def(all_grads, layers)
         
