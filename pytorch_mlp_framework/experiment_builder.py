@@ -153,14 +153,14 @@ class ExperimentBuilder(nn.Module):
         
         ########################################
         for name, param in named_parameters:
-		name = str(name).replace('layer_dict.','')
-		name = str(name).replace('.bias','')
-		name = str(name).replace('.weight','')
-        	layers.append(name)
-        	grad = param.grad
-        	L1_grad = torch.abs(grad)
-        	L1_mean = torch.mean(L1_grad).item()
-        	all_grads.append(L1_mean)
+                name = str(name).replace('layer_dict.','')
+                name = str(name).replace('.bias','')
+                name = str(name).replace('.weight','')
+                layers.append(name)
+                grad = param.grad
+                L1_grad = torch.abs(grad)
+                L1_mean = torch.mean(L1_grad).item()
+                all_grads.append(L1_mean)
         
         plt = self.plot_func_def(all_grads, layers)
         
