@@ -13,6 +13,7 @@ for i in range(0,20):
    channel_num = np.random.randint(10,20)
    example_inputs.append(torch.rand(N,channel_num,img_dims[0],img_dims[1]))
 
+
 @pytest.mark.parametrize("example_input",example_inputs)
 def test_ConvolutionalProcessingBlockBN(example_input):
    input_shape = example_input.shape
@@ -40,3 +41,32 @@ def test_ConvolutionalDimensionalityReductionBlockBN(example_input):
    out = None
    out = ConvolutionalDimensionalityReductionBlockBNObject.forward(example_input)
    assert out != None
+
+
+@pytest.mark.parametrize("example_input",example_inputs)
+def test_ConvolutionalProcessingBlockRes(example_input):
+   input_shape = example_input.shape
+   num_filters = example_input.shape[1]
+   kernel_size = np.random.randint(1,5)
+   padding = 'same'
+   dilation = 1
+   bias = torch.rand(1)
+   ConvolutionalProcessingBlockResTestObject = ConvolutionalProcessingBlockRes(input_shape, num_filters, kernel_size, padding, bias, dilation)
+   out = None
+   out = ConvolutionalProcessingBlockResTestObject.forward(example_input)
+   assert out != None
+   
+@pytest.mark.parametrize("example_input",example_inputs)
+def test_ConvolutionalProcessingBlockBNRes(example_input):
+   input_shape = example_input.shape
+   num_filters = example_input.shape[1]
+   kernel_size = np.random.randint(1,5)
+   padding = 'same'
+   dilation = 1
+   bias = torch.rand(1)
+   ConvolutionalProcessingBlockBNResTestObject = ConvolutionalProcessingBlockBNRes(input_shape, num_filters, kernel_size, padding, bias, dilation)
+   out = None
+   out = ConvolutionalProcessingBlockBNResTestObject.forward(example_input)
+   assert out != None
+   
+   

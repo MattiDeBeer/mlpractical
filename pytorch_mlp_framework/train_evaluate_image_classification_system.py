@@ -50,6 +50,12 @@ elif args.block_type == 'empty_block':
 elif args.block_type == 'conv_block_bn':  #my code for batch norm layers
     processing_block_type = ConvolutionalProcessingBlockBN
     dim_reduction_block_type = ConvolutionalDimensionalityReductionBlockBN
+elif args.block_type == 'conv_block_res':  #my code for batch norm layers
+    processing_block_type = ConvolutionalProcessingBlockRes
+    dim_reduction_block_type = ConvolutionalDimensionalityReductionBlock
+elif args.block_type == 'conv_block_bn_res':  #my code for batch norm layers
+    processing_block_type = ConvolutionalProcessingBlockBNRes
+    dim_reduction_block_type = ConvolutionalDimensionalityReductionBlockBN
 else:
     raise ModuleNotFoundError
 
