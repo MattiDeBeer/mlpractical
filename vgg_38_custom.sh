@@ -36,7 +36,7 @@ else
     weight_decay="$weight_decay_arg"
 fi
 
-experiment_name="VGG_38_${block_type_arg}lr${learning_rate}_wd${weight_decay}_experiment" 
+experiment_name="VGG_38_${block_type_arg}_lr${learning_rate}_wd${weight_decay}_experiment" 
 echo "Experiment name: ${experiment_name}"
 
 echo "using block type: $block_type";
