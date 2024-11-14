@@ -26,7 +26,13 @@
 \newcommand{\questionOne} {
 \youranswer{Question 1 - Use Figures 1, 2, and 3 to identify the Vanishing Gradient Problem (which of these model suffers from it, and what are the consequences depicted?).
 
-The average length for an answer to this question is approximately 1/5 of the columns in a 2-column page}
+The average length for an answer to this question is approximately 1/5 of the columns in a 2-column page
+
+Figure 1 shows the validation and training loss curves as a function od epoch number for both the VGG\_08 (depth 8) and VGG\_38 (depth 38) models. Both the loss and accuracy curves of the VGG\_08 model indicate that the model is both training and generalising well. The peak validation accuracy of this model is only about 0.5, showing that the model is quite ineffective at the classification task at hand and is most likely under parameterized. Figure 2 shows that the gradient of this model is backpropagating through the network well, and is not a victim of vanishing or exploding gradients.
+
+Figure 2 shows completely stationary accuracy and loss curves for the VGG\_38 model. This indicates that the model weights and biases are not being altered between epochs. Though this behaviour could be a result of a learning rate that is too small, Figure 3 shows that this is not the case. The plot shows the gradient flow (average L1 norm of the gradients) for each layer and epoch. It is clear form this that it is the gradients themselves that are vanishing as one backpropagates through the network. This is very typical of a deep model exhibiting the vanishing gradient problem, and explain why the model is unable to train at all.
+
+}
 }
 
 %% Question 2:
@@ -34,7 +40,16 @@ The average length for an answer to this question is approximately 1/5 of the co
 \youranswer{Question 2 - Consider these results (including Figure 1 from \cite{he2016deep}). Discuss the relation between network capacity and overfitting, and whether, and how, this is reflected on these results. What other factors may have lead to this difference in performance?
 
 The average length for an answer to this question is
-approximately 1/5 of the columns in a 2-column page}
+approximately 1/5 of the columns in a 2-column page
+
+It is widely known that networks with a large amount of free parameters relative to their dataset size are prone to overfitting \citep[Ch. 5]{Goodfellow-et-al-2016}. Figure 1 of \citep{he2016deep} shows the validation and train error of a 54 and 20 layer network. The 54 layer network performs noticeably worse than the 20 layer network, but it is clear that overfitting is not the culprit. Most importantly, both the train and validaiton errors are higher for the 54 layer network and there is no evidence that the characteristic validation train loss gap is present. This not indicative of overfitting. 
+
+The 'plain' networks were also trained using Batch Norm and it was verified that the backpropagated gradients showed \textit{'healthy norms'} \citep[Sec. 4.1]{he2016deep}. Therefore, the authors argued that it was unlikely that vanishing gradients caused the difficulty in training. It was highlighted that even though the network was not victim to the typical pitfalls of deep networks (overfittig and vanishing gradients), it was still under performing its shallower counterpart. Fortunately it was found that the implementation of residual layers address this degradation problem well enough to yield a 54 layer network that generalised better than the 20 layer network, with both a lower train and validation loss. Here it is apparent that eliminating overfitting and vanishing gradients are not necessarily sufficient allow a very deep network perform better than a shallower one, and that the implementation of further techniques (such as Residual layers) may be needed.
+
+A leading explanation for the poor performance of deeper 'plain' networks stems form the \textit{Layer Convergence Bias}. This is an observed phenomena where layers closer to the network input converge slower that deeper ones, explaining why more layers lead to slower overall convergence. A similar explanation was also conjectured in \citep[Sec. 4.1]{he2016deep}). It was shown in \citep{YChen} that shallower layers (closer to the input) have steeper and more complex landscapes that in turn lead to smaller convergence rates when training (explaining the \textit{Layer Convergence Bias}). This means that a larger 'plain' network will require far more optimization steps to converge its shallow layers than a network with fewer overall layers.
+
+
+}
 }
 
 %% Question 3:
@@ -80,7 +95,7 @@ The length of this question description is indicative of the average length of a
 %
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\linewidth]{figures/gradplot_38_watermarked.pdf}
+    \includegraphics[width=\linewidth]{figures/grad_flow_vgg38.pdf}
     \caption{Gradient Flow on VGG38}
     \label{fig:avg_grad_flow_38}
 \end{figure}
