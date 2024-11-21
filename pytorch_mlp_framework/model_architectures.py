@@ -486,7 +486,8 @@ class ConvolutionalProcessingBlockRes(nn.Module):
                                               padding=self.padding, stride=1)
 
         out = self.layer_dict['conv_1'].forward(out)
-        out = F.leaky_relu(out) + res_layer
+        out = out + res_layer
+        out = F.leaky_relu(out)
 
         print(out.shape)
 
@@ -498,7 +499,8 @@ class ConvolutionalProcessingBlockRes(nn.Module):
         out = F.leaky_relu(out)
 
         out = self.layer_dict['conv_1'].forward(out)
-        out = F.leaky_relu(out) + res_layer
+        out = out + res_layer
+        out = F.leaky_relu(out)
 
         return out
 
@@ -541,7 +543,8 @@ class ConvolutionalProcessingBlockBNRes(nn.Module):
 
         out = self.layer_dict['conv_1'].forward(out)
         out = self.layer_dict['batchnorm_1'](out)
-        out = F.leaky_relu(out) + res_layer
+        out = out + res_layer
+        out = F.leaky_relu(out)
 
         print(out.shape)
 
@@ -555,6 +558,7 @@ class ConvolutionalProcessingBlockBNRes(nn.Module):
 
         out = self.layer_dict['conv_1'].forward(out)
         out = self.layer_dict['batchnorm_1'](out)
-        out = F.leaky_relu(out) + res_layer
+        out = out + res_layer
+        out = F.leaky_relu(out)
 
         return out  
